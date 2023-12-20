@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>contact page</title>
+	<style>
+		.container {
+  background-color:grey;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+label, input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+	</style>
+	<script>
+		// Add event listener to the submit button
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  // Get values from form inputs
+  const name = form.elements.name.value;
+  const email = form.elements.email.value;
+  const message = form.elements.message.value;
+
+  // Show alert with form values
+  alert(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+});
+
+	</script>
+</head>
+<body>
+	<div class="container">
+  <h1>Contact Us</h1>
+  <p>Have a question or need help? Fill out the form below and we will get back to you as soon as possible.</p>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+
+     <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
